@@ -1,4 +1,4 @@
-import { productosDisponibles, productosDisponiblesBuzos } from "./inicio.js"
+import { productosDisponibles, productosDisponiblesBuzos } from "./estructura.js"
 
 JSON.parse(sessionStorage.getItem("carrito")) === null && sessionStorage.setItem("carrito", JSON.stringify([]))
 
