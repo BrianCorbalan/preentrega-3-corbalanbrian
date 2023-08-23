@@ -44,6 +44,9 @@ export const productos = [
     alt: "Remera Digimon",
     link: "../pages/remera-digimon.html"
   },
+];
+
+export const buzos = [
   {
     id: 6,
     nombre: "Attack On Titan",
@@ -94,5 +97,5 @@ export const productos = [
 
 
 JSON.parse(localStorage.getItem("productos")) || localStorage.setItem("productos", JSON.stringify(productos));
-
+JSON.parse(localStorage.getItem("buzos")) || localStorage.setItem("buzos", JSON.stringify(buzos));
 

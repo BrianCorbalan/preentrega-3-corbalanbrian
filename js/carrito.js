@@ -1,4 +1,4 @@
-import { productosDisponibles } from "./inicio.js"
+import { productosDisponibles, productosDisponiblesBuzos } from "./inicio.js"
 
 JSON.parse(sessionStorage.getItem("carrito")) === null && sessionStorage.setItem("carrito", JSON.stringify([]))
 
@@ -46,6 +46,39 @@ export const comprarProducto = (idProducto) => {
 
 }
 
+export const comprarProductoBuzo = (idProducto) => {
+
+    const producto = productosDisponiblesBuzos.find((producto) => producto.id === idProducto)
+
+    const { nombre, precio, imagen, id } = producto
+
+    const productoCarrito = carrito.find((producto) => producto.id === idProducto)
+
+    if(productoCarrito === undefined){
+        const nuevoProductoCarrito = {
+            id: id,
+            nombre: nombre,
+            precio: precio,
+            imagen: imagen,
+            cantidad: 1
+        }
+
+    carrito.push(nuevoProductoCarrito)
+    sessionStorage.setItem("carrito", JSON.stringify(carrito) )
+    }else{
+        const indexProductoCarrito = carrito.findIndex((producto) => producto.id === idProducto)
+
+        carrito[indexProductoCarrito].cantidad++
+        carrito[indexProductoCarrito].precio = precio * carrito[indexProductoCarrito].cantidad
+
+        sessionStorage.setItem("carrito", JSON.stringify(carrito))
+    }
+    carrito = JSON.parse(sessionStorage.getItem("carrito"))
+
+    alert(`Se agregó ${nombre} al carrito`)
+
+}
+
 const dibujarCarrito = () => {
 
         listaCarrito.innerHTML = ''
@@ -62,18 +95,18 @@ const dibujarCarrito = () => {
         <td>${precio /cantidad}</td>
         <td>$${precio}</td>
         <td>
-        <button id="+${id}" class="btn btn-dark" style="width: 40px">+</button>
         <button id="-${id}" class="btn btn-dark" style="width: 40px">-</button>
+        <button id="+${id}" class="btn btn-dark" style="width: 40px">+</button>
         </td>
         `
 
         listaCarrito.append(body)
         
-        const btnAgregar = document.getElementById(`+${id}`)
         const btnRestar = document.getElementById(`-${id}`)
+        const btnAgregar = document.getElementById(`+${id}`)
 
-        btnAgregar.addEventListener("click", () => aumentarCantidad(id))
         btnRestar.addEventListener("click", () => restarCantidad(id))
+        btnAgregar.addEventListener("click", () => aumentarCantidad(id))
         
     });
 

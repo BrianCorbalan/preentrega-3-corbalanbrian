@@ -141,6 +141,14 @@ header {
   gap: 1rem;
   margin-bottom: 2rem; }
 
+#productosBuzos {
+  height: 50vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 50%);
+  gap: 1rem;
+  margin-bottom: 2rem; }
+
 .productoCinco {
   display: none; }
 
@@ -336,6 +344,8 @@ footer {
     height: 100vh; }
   #productos{
     height: 100vh; }
+  #productosBuzos{
+    height: 100vh; }
   /* pagina ofertas */
   .ofertasOfertas {
     height: 75vh;
@@ -409,11 +419,15 @@ footer {
     height: 50vh;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 1fr; }
-    #productos{
-      height: 50vh;
-      grid-template-columns: repeat(5, 1fr);
-      grid-template-rows: 1fr; }
-  /* seccion ofertas */
+  #productos{
+    height: 50vh;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr; }
+  #productosBuzos{
+    height: 50vh;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: 1fr; }
+/* seccion ofertas */
   .ofertasOfertas {
     height: 75vh; }
   /* estilos remeras page */
