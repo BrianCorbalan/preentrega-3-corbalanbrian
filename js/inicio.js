@@ -6,9 +6,9 @@ export let productosDisponibles = JSON.parse(localStorage.getItem("productos"))
 export let productosDisponiblesBuzos = JSON.parse(localStorage.getItem("buzos"))
 
 document.addEventListener("DOMContentLoaded", () => {
-    generarTitulosProductos("Remeras")
+    
     generarCardsProductos(productosDisponibles)
-    generarTitulosProductosBuzos("Buzos")
+    
     generarCardsProductosBuzos(productosDisponiblesBuzos) 
 })
 
