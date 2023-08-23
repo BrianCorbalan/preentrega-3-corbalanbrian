@@ -68,8 +68,7 @@ export const generarCardsProductosBuzos = (buzos) => {
 
 
   });
-};
-  
+};  
 
 const generarTitulosProductos = (categoria) => {
     // Agrega el título 
