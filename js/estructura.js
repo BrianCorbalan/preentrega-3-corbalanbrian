@@ -7,7 +7,7 @@ export let productosDisponiblesBuzos = JSON.parse(localStorage.getItem("buzos"))
 
 document.addEventListener("DOMContentLoaded", () => {
   generarCardsProductos(productosDisponibles);
-  
+  generarCardsProductosBuzos(productosDisponiblesBuzos);
 });
 
 export const generarCardsProductos = (productos) => {
