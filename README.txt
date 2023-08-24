@@ -1,4 +1,4 @@
-Proyecto Final Reiwa Style para el curso de Desarrollo Web de Coderhouse
+Proyecto Reiwa Style para el curso de Js de Coderhouse
 
 
 Hola a todos! Este es mi primer proyecto Js de Coderhouse. 
